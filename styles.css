@@ -389,6 +389,19 @@ section {
   color: var(--muted2);
   font-weight: 400;
 }
+.project-index-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.project-logo {
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+}
 .project-name {
   font-family: var(--serif);
   font-size: 1.7rem;
@@ -717,13 +730,15 @@ footer {
   .section-count { margin-bottom: 0; }
 
   .project-row {
-    grid-template-columns: 36px 1fr auto;
+    grid-template-columns: 44px 1fr auto;
     grid-template-rows: auto auto auto;
     gap: 0.5rem 1rem;
     padding: 1.75rem 0;
   }
   .project-row:hover { padding-left: 0; }
   .project-name { font-size: 1.4rem; }
+  .project-index-col { flex-direction: row; align-items: center; gap: 0.6rem; }
+  .project-logo { width: 100px; height: auto; }
   .project-tag {
     grid-column: 2 / 3;
     grid-row: 2;
@@ -784,7 +799,8 @@ footer {
   #projects { padding: 4rem 1.25rem; }
   .section-title { font-size: clamp(2rem, 9vw, 2.75rem); }
   .project-name { font-size: 1.2rem; }
-  .project-row { grid-template-columns: 28px 1fr auto; }
+  .project-row { grid-template-columns: 34px 1fr auto; }
+  .project-logo { width: auto; height: 100px; }
 
   #contact { padding: 4rem 1.25rem; }
   .contact-tagline { font-size: clamp(1.9rem, 9vw, 2.4rem); }
