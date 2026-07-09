@@ -293,14 +293,47 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 900) closeMobileMenu();
 });
 
+
 /* ── FORM ── */
+// TODO: replace with your real inbox address
+const CONTACT_EMAIL = 'omar.shivji@gmail.com';
+ 
 function handleSubmit(e) {
   e.preventDefault();
+  const form = e.target;
   const note = document.getElementById('form-note');
-  note.textContent = 'Message sent — we\'ll be in touch within 24 hours.';
+ 
+  const firstName = form.firstName.value.trim();
+  const lastName = form.lastName.value.trim();
+  const email = form.email.value.trim();
+  const business = form.business.value.trim();
+  const service = form.service.value;
+  const message = form.message.value.trim();
+ 
+  const subject = `New enquiry from ${firstName} ${lastName}`.trim();
+ 
+  const bodyLines = [
+    `Name: ${firstName} ${lastName}`.trim(),
+    `Email: ${email}`,
+    business ? `Business: ${business}` : null,
+    service ? `Service required: ${service}` : null,
+    '',
+    'Message:',
+    message || '(no message provided)'
+  ].filter(line => line !== null);
+ 
+  const mailtoLink =
+    `mailto:${CONTACT_EMAIL}` +
+    `?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+ 
+  window.location.href = mailtoLink;
+ 
+  note.textContent = 'Opening your email client — send the message to reach us.';
   note.classList.add('success');
-  e.target.reset();
+  form.reset();
 }
+ 
 </script>
 </body>
 </html>
