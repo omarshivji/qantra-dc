@@ -3,15 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanta Digital Consultancy</title>
+
+<title>QANTRA Digital Consultancy — Websites, Automation & Digital Strategy</title>
+<meta name="description" content="QANTRA Digital Consultancy builds bespoke websites, intelligent automation and full social media presence for ambitious UK businesses.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://qantradc.com/">
+
+<!-- Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="QANTRA Digital Consultancy">
+<meta property="og:description" content="Bespoke websites, intelligent automation and social media presence for ambitious businesses.">
+<meta property="og:url" content="https://qantradc.com/">
+<meta property="og:image" content="https://qantradc.com/qantra.png">
+<meta property="og:site_name" content="QANTRA Digital Consultancy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QANTRA Digital Consultancy">
+<meta name="twitter:description" content="Bespoke websites, intelligent automation and social media presence for ambitious businesses.">
+<meta name="twitter:image" content="https://qantradc.com/qantra.png">
+
+<link rel="icon" href="./qantra.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<!-- Small additions that don't exist in styles.css -->
+<style>
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+    }
+  }
+
+  /* Keyboard accessibility */
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 999;
+    padding: .75rem 1.25rem; background: #000; color: #fff;
+    font-family: 'Montserrat', sans-serif; font-size: .75rem; letter-spacing: .1em;
+    text-transform: uppercase; text-decoration: none;
+  }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 2px solid currentColor; outline-offset: 3px;
+  }
+
+  /* Spam trap — must stay invisible */
+  .hp-field {
+    position: absolute !important; left: -9999px !important;
+    width: 1px; height: 1px; overflow: hidden;
+  }
+
+  /* Form states */
+  .form-note.success { color: #1a7f5a; }
+  .form-note.error   { color: #b4342a; }
+  .submit-btn[disabled] { opacity: .55; cursor: not-allowed; }
+  .field input[aria-invalid="true"],
+  .field textarea[aria-invalid="true"],
+  .field select[aria-invalid="true"] { border-color: #b4342a; }
+</style>
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<a href="#home" class="skip-link">Skip to content</a>
+
+<canvas id="bg" aria-hidden="true"></canvas>
 
 <!-- MOBILE MENU DRAWER -->
 <div class="mobile-menu" id="mobileMenu">
@@ -23,7 +82,7 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#home" class="nav-brand">
+  <a href="#home" class="nav-brand" aria-label="QANTRA DC — home">
     <span class="nav-brand-img"><img width="200" src="./qantra.png" alt="QANTRA DC"></span>
   </a>
   <ul class="nav-links">
@@ -31,8 +90,8 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact Us</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Let's Talk <span>→</span></a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+  <a href="#contact" class="nav-cta">Let's Talk <span aria-hidden="true">→</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span>
     <span></span>
     <span></span>
@@ -49,7 +108,7 @@
 
   <div class="hero-right fade-in d2">
     <p class="hero-body">
-      We partner with ambitious businesses to build their digital foundations — bespoke websites, intelligent automation, and full social media presence from day one.
+      We partner with ambitious businesses to build their digital foundations — bespoke websites, intelligent automation, and a full social media presence from day one.
     </p>
     <a href="#projects" class="hero-link">
       Discover our work
@@ -72,7 +131,7 @@
   <div class="pillar-item reveal">
     <div class="pillar-num">03</div>
     <div class="pillar-title">Digital Strategy</div>
-    <div class="pillar-desc">Account creation (Instagram, Facebook, X, Google Review Accounts) to cater to your niche.</div>
+    <div class="pillar-desc">Account setup across Instagram, Facebook, X and Google Reviews — positioned for your niche from day one.</div>
   </div>
 </div>
 
@@ -83,7 +142,7 @@
       <p class="section-kicker">Selected work</p>
       <h2 class="section-title">What we've <em>delivered.</em></h2>
     </div>
-    <p class="section-count">04 projects</p>
+    <p class="section-count">03 projects</p>
   </div>
 
   <div class="projects-list">
@@ -92,24 +151,27 @@
       <span class="project-index">01</span>
       <div>
         <div class="project-name">Amal Estate Group</div>
-        <div class="project-desc">Full website build for a rental estates group. Helping investors grow long term wealth through property development deals. This site was designed to showcase properties and information regarding Amal Estate Group.</div>
+        <div class="project-desc">Full website build for a rental estates group helping investors grow long-term wealth through property development deals. Designed to showcase properties and keep investor information clear and current.</div>
       </div>
-      <span class="project-tag"><a href="https://amalestatesgroup.com/" target="_blank">Web Development</a></span>
+      <span class="project-tag">
+        <a href="https://amalestatesgroup.com/" target="_blank" rel="noopener noreferrer">Web Development</a>
+      </span>
     </div>
-        <div class="project-row reveal">
+
+    <div class="project-row reveal">
       <span class="project-index">02</span>
       <div>
         <div class="project-name">M.S Constructions</div>
-        <div class="project-desc">Drylining mobile web app (iOS/Android) for calculating dry lining materials and costs. Includes a camera feature for uploading images of the work area and an upload feature for floor plans to be measured.</div>
+        <div class="project-desc">Drylining mobile app (iOS/Android) for calculating materials and costs. Includes a camera feature for capturing the work area and floor-plan uploads for automatic measurement.</div>
       </div>
-      <span class="project-tag">App development</span>
+      <span class="project-tag">App Development</span>
     </div>
 
     <div class="project-row reveal">
       <span class="project-index">03</span>
       <div>
         <div class="project-name">Coming soon</div>
-        <div class="project-desc"></div>
+        <div class="project-desc">Our next build is underway. Check back shortly.</div>
       </div>
       <span class="project-tag">In progress</span>
     </div>
@@ -149,7 +211,7 @@
 
     <div class="contact-details">
       <span class="contact-detail-label">Instagram</span>
-      <span class="contact-detail-social"><a href="https://www.instagram.com/qantradc?igsh=Zjlpbndmd2l4ZWZi&utm_source=qr" target="_blank">@qantradc</a></span>
+      <span class="contact-detail-social"><a href="https://www.instagram.com/qantradc" target="_blank" rel="noopener noreferrer">@qantradc</a></span>
       <span class="contact-detail-label">Email</span>
       <span class="contact-detail-social"><a href="mailto:info@qantradc.com">info@qantradc.com</a></span>
       <span class="contact-detail-label">Based in</span>
@@ -157,55 +219,88 @@
     </div>
   </div>
 
-  <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+  <form class="contact-form reveal" id="contactForm" novalidate>
     <div class="field-row">
       <div class="field">
-        <label>First Name</label>
-        <input type="text" placeholder="James" required>
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="first_name" type="text" placeholder="James" autocomplete="given-name" required>
       </div>
       <div class="field">
-        <label>Last Name</label>
-        <input type="text" placeholder="Smith" required>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="last_name" type="text" placeholder="Smith" autocomplete="family-name" required>
       </div>
     </div>
     <div class="field">
-      <label>Email Address</label>
-      <input type="email" placeholder="you@yourbusiness.com" required>
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
     </div>
     <div class="field">
-      <label>Business Name</label>
-      <input type="text" placeholder="Your company">
+      <label for="business">Business Name</label>
+      <input id="business" name="business" type="text" placeholder="Your company" autocomplete="organization">
     </div>
     <div class="field">
-      <label>Service Required</label>
-      <select>
+      <label for="service">Service Required</label>
+      <select id="service" name="service" required>
         <option value="" disabled selected>Select a service</option>
         <option>Website Development</option>
         <option>Automation Setup</option>
         <option>Social Media Launch</option>
-        <option>App development</option>
+        <option>App Development</option>
         <option>Full Package</option>
         <option>Not sure yet</option>
       </select>
     </div>
     <div class="field">
-      <label>Tell Us More</label>
-      <textarea placeholder="Brief description of your project or business..."></textarea>
+      <label for="message">Tell Us More</label>
+      <textarea id="message" name="message" placeholder="Brief description of your project or business..." required></textarea>
     </div>
+
+    <!-- Spam trap: real people never fill this in -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="botcheck">Leave this empty</label>
+      <input id="botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+    </div>
+
     <div class="form-footer">
-      <span class="form-note" id="form-note">We respond within 24 hours.</span>
-      <button type="submit" class="submit-btn">Send Message <span>→</span></button>
+      <span class="form-note" id="form-note" role="status" aria-live="polite">We respond within 24 hours.</span>
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span id="submitLabel">Send Message</span> <span aria-hidden="true">→</span>
+      </button>
     </div>
   </form>
 </section>
 
 <footer>
-  <div class="footer-logo"><img width="100" src="qantra.png" alt="QANTRA DC"></div>
-  <p class="footer-copy">© 2025 QANTRA DIGITAL CONSULTANCY. All rights reserved.</p>
-  <p class="footer-tagline">BRIDGING BUSINESSES & TECHNOLOGY.</p>
+  <div class="footer-logo"><img width="100" src="./qantra.png" alt="QANTRA DC" loading="lazy"></div>
+  <p class="footer-copy">&copy; <span id="year">2026</span> QANTRA DIGITAL CONSULTANCY. All rights reserved.</p>
+  <p class="footer-tagline">BRIDGING BUSINESSES &amp; TECHNOLOGY.</p>
 </footer>
 
+<!-- Search engine / business info -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "QANTRA Digital Consultancy",
+  "url": "https://qantradc.com/",
+  "logo": "https://qantradc.com/qantra.png",
+  "email": "info@qantradc.com",
+  "areaServed": "GB",
+  "address": { "@type": "PostalAddress", "addressCountry": "GB" },
+  "sameAs": ["https://www.instagram.com/qantradc"],
+  "description": "Bespoke websites, intelligent automation and social media presence for ambitious businesses."
+}
+</script>
+
 <script>
+
+const FORM_CONFIG = {
+  provider:    'web3forms',  
+  accessKey:   'fd50f468-42ca-42f1-9d33-fd446c2f5fd6',
+  formspreeId: '',                     
+  recipient:   'info@qantradc.com'
+};
+
 /* ── NAV SCROLL ── */
 const mainNav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
@@ -220,6 +315,7 @@ function closeMenu() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
   hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Open menu');
   document.body.style.overflow = '';
 }
 
@@ -227,15 +323,14 @@ hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', isOpen);
   hamburger.setAttribute('aria-expanded', String(isOpen));
+  hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-/* Close menu if user taps outside of nav */
 mobileMenu.addEventListener('click', (e) => {
   if (e.target === mobileMenu) closeMenu();
 });
 
-/* Close on Escape key */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMenu();
 });
@@ -262,19 +357,124 @@ const revObs = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
       setTimeout(() => e.target.classList.add('visible'), i * 60);
+      revObs.unobserve(e.target);
     }
   });
 }, { threshold: 0.08 });
 reveals.forEach(r => revObs.observe(r));
 
-/* ── FORM ── */
-function handleSubmit(e) {
-  e.preventDefault();
-  const note = document.getElementById('form-note');
-  note.textContent = "Message sent — we'll be in touch within 24 hours.";
-  note.classList.add('success');
-  e.target.reset();
+/* ── FOOTER YEAR ── */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ── CONTACT FORM ── */
+const form       = document.getElementById('contactForm');
+const note       = document.getElementById('form-note');
+const submitBtn  = document.getElementById('submitBtn');
+const submitLbl  = document.getElementById('submitLabel');
+
+function setNote(text, state) {
+  note.textContent = text;
+  note.classList.remove('success', 'error');
+  if (state) note.classList.add(state);
 }
+
+function markInvalid(field, invalid) {
+  field.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+}
+
+function validate() {
+  const required = form.querySelectorAll('[required]');
+  let firstBad = null;
+  required.forEach(f => {
+    const ok = f.checkValidity() && f.value.trim() !== '';
+    markInvalid(f, !ok);
+    if (!ok && !firstBad) firstBad = f;
+  });
+  if (firstBad) {
+    setNote('Fill in the highlighted fields and try again.', 'error');
+    firstBad.focus();
+    return false;
+  }
+  return true;
+}
+
+function mailtoFallback(data) {
+  const body = [
+    `Name: ${data.first_name} ${data.last_name}`,
+    `Email: ${data.email}`,
+    `Business: ${data.business || '—'}`,
+    `Service: ${data.service}`,
+    '',
+    data.message
+  ].join('\n');
+
+  const href = `mailto:${FORM_CONFIG.recipient}`
+    + `?subject=${encodeURIComponent('Website enquiry — ' + (data.business || data.first_name))}`
+    + `&body=${encodeURIComponent(body)}`;
+
+  window.location.href = href;
+  setNote('Your email app is opening — press send to reach us.', 'success');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!validate()) return;
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  // Bot caught by the honeypot: pretend all is well, send nothing.
+  if (data.botcheck) { setNote("Message sent — we'll be in touch within 24 hours.", 'success'); form.reset(); return; }
+  delete data.botcheck;
+
+  const keyMissing = FORM_CONFIG.provider === 'web3forms'
+    ? (!FORM_CONFIG.accessKey || FORM_CONFIG.accessKey === 'YOUR_ACCESS_KEY_HERE')
+    : !FORM_CONFIG.formspreeId;
+
+  if (keyMissing) { mailtoFallback(data); return; }
+
+  submitBtn.disabled = true;
+  submitLbl.textContent = 'Sending';
+  setNote('Sending your message…');
+
+  try {
+    let endpoint, payload;
+
+    if (FORM_CONFIG.provider === 'web3forms') {
+      endpoint = 'https://api.web3forms.com/submit';
+      payload = {
+        access_key: FORM_CONFIG.accessKey,
+        subject: `New enquiry — ${data.service} — ${data.business || data.first_name}`,
+        from_name: `${data.first_name} ${data.last_name}`,
+        replyto: data.email,
+        ...data
+      };
+    } else {
+      endpoint = `https://formspree.io/f/${FORM_CONFIG.formspreeId}`;
+      payload = { _replyto: data.email, _subject: `New enquiry — ${data.service}`, ...data };
+    }
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.success !== false) {
+      form.reset();
+      form.querySelectorAll('[aria-invalid]').forEach(f => markInvalid(f, false));
+      setNote("Message sent — we'll be in touch within 24 hours.", 'success');
+    } else {
+      throw new Error(result.message || 'Request rejected');
+    }
+  } catch (err) {
+    setNote('That didn\u2019t send. Email us directly at info@qantradc.com.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitLbl.textContent = 'Send Message';
+  }
+});
 </script>
 </body>
 </html>
